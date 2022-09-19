@@ -4,7 +4,7 @@ body {
 
 }
 
-content {
+.content {
     font-family: 'Ubuntu', sans-serif;
     height: 1240px;
     width: 2204px;
@@ -13,4 +13,8 @@ content {
 .todo > div > h3 {
     font-size: 24px;
     font-family: inherit;
+}
+
+homepage:hover {
+    cursor: pointer;
 }
