@@ -1,0 +1,16 @@
+body {
+    overflow: hidden;
+    background: linear-gradient(45deg, beige, white);
+
+}
+
+content {
+    font-family: 'Ubuntu', sans-serif;
+    height: 1240px;
+    width: 2204px;
+}
+
+.todo > div > h3 {
+    font-size: 24px;
+    font-family: inherit;
+}
