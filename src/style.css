@@ -17,22 +17,28 @@ body {
     text-align: center;
 }
 
+.todo > #notes {
+    border-bottom: 0.5px solid black;
+}
+
 .todofirst {
     font-size: 20px;
     padding-top: 2px;
-    margin-bottom: 80px;
+    height: 100px;
 }
 
 .todo > div:not(.todofirst) {
     border-top: 0.5px solid black;
+    padding-top: 10px;
+    height: 80px;
 }
 
+.todo > div:not(.todofirst):hover {
+    cursor: pointer;
+    background: linear-gradient(120deg, rgba(222, 184, 135, 0.637), rgba(255, 255, 255, 0.637));
+}
 
 .todo > div > h4 {
     font-size: 18px;
     font-weight: 400;
-}
-
-#homepage:hover, #today:hover, #notes:hover, #projects:hover, #tomorrow:hover, #thisweek:hover {
-    cursor: pointer;
 }
