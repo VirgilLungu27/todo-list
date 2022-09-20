@@ -24,6 +24,9 @@ function component() {
             <div id="projects"><h4>Projects</h4></div>
             <div id="notes"><h4>Notes</h4></div>
         </div>
+        <div class="main">
+            <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
+        </div>
     </div>`
 
     return element;

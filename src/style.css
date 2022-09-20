@@ -1,7 +1,6 @@
 body {
     overflow: hidden;
     background: linear-gradient(120deg, beige, white);
-
 }
 
 .content {
@@ -15,6 +14,8 @@ body {
     max-width: 300px;
     height: 1000px;
     text-align: center;
+    transition-property: transform;
+    transition-duration: 1s;
 }
 
 .todo > #notes {
@@ -41,4 +42,12 @@ body {
 .todo > div > h4 {
     font-size: 18px;
     font-weight: 400;
+}
+
+.main {
+    top: 20%;
+    left: 32%;
+    position: absolute;
+    font-weight: 300;
+    font-family: 'Ubuntu';
 }
