@@ -15,7 +15,7 @@ function component() {
     element.innerHTML = 
     `<div class="hero">
         <div class="todo">
-            <div><h3>Todo List</h3></div>
+            <div class="todofirst"><h3>Todo List</h3></div>
             
             <div id="homepage"><h4>Home</h4></div>
             <div id="today"><h4>Today</h4></div>

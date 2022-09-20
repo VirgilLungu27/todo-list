@@ -1,18 +1,36 @@
 body {
     overflow: hidden;
-    background: linear-gradient(45deg, beige, white);
+    background: linear-gradient(120deg, beige, white);
 
 }
 
 .content {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: sans-serif;
     height: 1240px;
     width: 2204px;
 }
 
-.todo > div > h3 {
-    font-size: 24px;
-    font-family: inherit;
+.todo {
+    background: linear-gradient(120deg, burlywood, white);
+    max-width: 300px;
+    height: 1000px;
+    text-align: center;
+}
+
+.todofirst {
+    font-size: 20px;
+    padding-top: 2px;
+    margin-bottom: 80px;
+}
+
+.todo > div:not(.todofirst) {
+    border-top: 0.5px solid black;
+}
+
+
+.todo > div > h4 {
+    font-size: 18px;
+    font-weight: 400;
 }
 
 #homepage:hover, #today:hover, #notes:hover, #projects:hover, #tomorrow:hover, #thisweek:hover {
