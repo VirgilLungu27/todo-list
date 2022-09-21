@@ -8,6 +8,7 @@ function homeLoad() {
         <div class="main">
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
         </div>
+        
         <div class="todo">
             <div class="todofirst"><h3>Todo List</h3></div>
         

@@ -22,6 +22,8 @@ function component() {
         <div class="main">
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
         </div>
+        <button id="back">Go back</button>
+
     </div>`
 
     return element;
@@ -29,10 +31,7 @@ function component() {
 
 document.body.appendChild(component());
 
-export default component;
-
 // this is to remove last child and insert the new elements of the todo list page depending on what the user selects.
-
 
 const homeDiv = document.getElementById('homepage')
 const todayDiv = document.getElementById('today')
@@ -42,34 +41,40 @@ const projectsDiv = document.getElementById('projects')
 const notesDiv = document.getElementById('notes')
 
 homeDiv.addEventListener('click', function homeChange() {
-    document.body.removeChild(component());
+    document.body.removeChild(document.body.children[2]);
     document.body.appendChild(homeLoad());
 })
 
 todayDiv.addEventListener('click', function todayChange() {
-    document.body.removeChild(component());
+    document.body.removeChild(document.body.children[2]);
     document.body.appendChild(todayLoad());
 })
 
 tomorrowDiv.addEventListener('click', function tomorrowChange() {
-    document.body.removeChild(component());
+    document.body.removeChild(document.body.children[2]);
     document.body.appendChild(tomorrowLoad());
 })
 
 thisWeekDiv.addEventListener('click', function thisWeekChange() {
-    document.body.removeChild(component());
+    document.body.removeChild(document.body.children[2]);
     document.body.appendChild(thisWeekLoad());
 })
 
 projectsDiv.addEventListener('click', function projectsChange() {
-    document.body.removeChild(component());
+    document.body.removeChild(document.body.children[2]);
     document.body.appendChild(projectsLoad());
 })
 
 notesDiv.addEventListener('click', function notesChange() {
-    document.body.removeChild(component());
+    document.body.removeChild(document.body.children[2]);
     document.body.appendChild(notesLoad());
 })
+
+const backButton = document.getElementById('back');
+backButton.addEventListener('click', function homeChange() {
+    document.body.removeChild(document.body.children[2]);
+    document.body.appendChild(homeLoad());
+});
 
 let array_collection = Array.from(document.body.children)
 console.log(array_collection)
