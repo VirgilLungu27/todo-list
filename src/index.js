@@ -1,11 +1,6 @@
 import _ from 'lodash';
 import './style.css';
-import { homeLoad } from './home.js';
-import { notesLoad } from './notes.js';
-import { todayLoad } from './today.js';
-import { tomorrowLoad } from './tomorrow.js';
-import { projectsLoad } from './projects.js';
-import { thisWeekLoad } from './thisweek.js';
+import { homeLoad, todayLoad, notesLoad, tomorrowLoad, projectsLoad, thisWeekLoad } from './functions.js';
 
 const element = document.createElement('div');
 element.className = 'content';
@@ -33,6 +28,11 @@ function component() {
 }
 
 document.body.appendChild(component());
+
+export default component;
+
+// this is to remove last child and insert the new elements of the todo list page depending on what the user selects.
+
 
 const homeDiv = document.getElementById('homepage')
 const todayDiv = document.getElementById('today')
@@ -70,3 +70,6 @@ notesDiv.addEventListener('click', function notesChange() {
     document.body.removeChild(component());
     document.body.appendChild(notesLoad());
 })
+
+let array_collection = Array.from(document.body.children)
+console.log(array_collection)
