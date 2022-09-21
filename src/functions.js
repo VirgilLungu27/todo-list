@@ -30,6 +30,8 @@ function todayLoad() {
         <div class="main">
             <h3>Find today's projects below.</h3>
         </div>
+        <button id="back">Go back</button>
+
         <div class="todo">
             <div class="todofirst"><h3>Todo List</h3></div>
         
@@ -54,8 +56,6 @@ function notesLoad() {
     `
     return element;
 }
-
-import _ from 'lodash';
 
 function projectsLoad() {
     const element = document.createElement('div');
