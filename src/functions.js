@@ -57,9 +57,11 @@ function notesLoad() {
     element.innerHTML = `
     <div class="hero">
         <div class="main">
-            <h3>Find your project notes below.</h3>
+            <h3>Find your project notes.</h3>
+          <div class="addtask">
+            <h4><span><img src="../src/addemoji.png"></span>Add task below.</h4>
+          </div>
         </div>
-        <button id="back">Go back</button>
 
         <div class="todo">
             <div class="todofirst"><h3>Todo List</h3></div>
@@ -82,11 +84,12 @@ function projectsLoad() {
     element.innerHTML = `
     <div class="hero">
         <div class="main">
-            <h3>Find all of your projects and project ideas below.</h3>
+            <h3>Find all of your projects and project ideas.</h3>
+            <div class="addtask">
+              <h4><span><img src="../src/addemoji.png"></span>Add task below.</h4>
+            </div>
         </div>
-        <button id="back">Go back</button>
-
-        <div class="todo">
+            <div class="todo">
             <div class="todofirst"><h3>Todo List</h3></div>
         
             <div id="homepage"><h4>Home</h4></div>
@@ -108,8 +111,10 @@ function thisWeekLoad() {
     <div class="hero">
         <div class="main">
             <h3>Find your tasks for this week below.</h3>
+            <div class="addtask">
+              <h4><span><img src="../src/addemoji.png"></span>Add task below.</h4>
+            </div>
         </div>
-        <button id="back">Go back</button>
 
         <div class="todo">
             <div class="todofirst"><h3>Todo List</h3></div>
@@ -133,8 +138,10 @@ function tomorrowLoad() {
     <div class="hero">
         <div class="main">
             <h3>Find your todo list for tomorrow down below.</h3>
+        <div class="addtask">
+            <h4><span><img src="../src/addemoji.png"></span>Add task below.</h4>
         </div>
-        <button id="back">Go back</button>
+        </div>
 
         <div class="todo">
             <div class="todofirst"><h3>Todo List</h3></div>

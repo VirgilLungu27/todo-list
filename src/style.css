@@ -71,6 +71,6 @@ body {
     transition: scale 0.5s;
 }
 
-.addtask {
-    display: flex;
+.addtask > h4 > span {
+    margin-right: 5px;
 }
