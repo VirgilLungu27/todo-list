@@ -70,3 +70,7 @@ body {
     scale: 1.1;
     transition: scale 0.5s;
 }
+
+.addtask {
+    display: flex;
+}

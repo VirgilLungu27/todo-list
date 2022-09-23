@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import './style.css';
-import { homeLoad, todayLoad, notesLoad, tomorrowLoad, projectsLoad, thisWeekLoad, addListeners } from './functions.js';
+import { addListeners } from './functions.js';
 
 const element = document.createElement('div');
 element.className = 'content';

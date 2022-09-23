@@ -29,9 +29,11 @@ function todayLoad() {
     element.innerHTML = `
     <div class="hero">
         <div class="main">
-            <h3>Find today's projects below.</h3>
+            <h3>Find today's projects.</h3>
+            <div class="addtask">
+                <h4><span><img src="../src/addemoji.png"></span>Add task below.</h4>
+            </div>
         </div>
-        <button id="back">Go back</button>
 
         <div class="todo">
             <div class="todofirst"><h3>Todo List</h3></div>
