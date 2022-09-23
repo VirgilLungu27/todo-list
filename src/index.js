@@ -22,7 +22,6 @@ function component() {
         <div class="main">
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
         </div>
-        <button id="back">Go back</button>
 
     </div>`
 
