@@ -8,7 +8,8 @@ function homeLoad() {
         <div class="main">
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
         </div>
-        
+        <button id="back">Go back</button>
+
         <div class="todo">
             <div class="todofirst"><h3>Todo List</h3></div>
         
@@ -46,6 +47,7 @@ function todayLoad() {
     </div>
     `
     return element;
+    
 }
 
 function notesLoad() {
@@ -148,9 +150,56 @@ function tomorrowLoad() {
     return element;
 }
 
+function addListeners() {
+    const homeDiv = document.getElementById('homepage')
+    const todayDiv = document.getElementById('today')
+    const tomorrowDiv = document.getElementById('tomorrow')
+    const thisWeekDiv = document.getElementById('thisweek')
+    const projectsDiv = document.getElementById('projects')
+    const notesDiv = document.getElementById('notes')
+
+    homeDiv.addEventListener('click', function homeChange() {
+        document.body.removeChild(document.body.children[2]);
+        document.body.appendChild(homeLoad());
+        addListeners();
+    })
+
+    todayDiv.addEventListener('click', function todayChange() {
+        document.body.removeChild(document.body.children[2]);
+        document.body.appendChild(todayLoad());
+        addListeners();
+    })
+
+    tomorrowDiv.addEventListener('click', function tomorrowChange() {
+        document.body.removeChild(document.body.children[2]);
+        document.body.appendChild(tomorrowLoad());
+        addListeners();
+    })
+
+    thisWeekDiv.addEventListener('click', function thisWeekChange() {
+        document.body.removeChild(document.body.children[2]);
+        document.body.appendChild(thisWeekLoad());
+        addListeners();
+    })
+
+    projectsDiv.addEventListener('click', function projectsChange() {
+        document.body.removeChild(document.body.children[2]);
+        document.body.appendChild(projectsLoad());
+        addListeners();
+    })
+
+    notesDiv.addEventListener('click', function notesChange() {
+        document.body.removeChild(document.body.children[2]);
+        document.body.appendChild(notesLoad());
+        addListeners();
+    })
+  
+}
+
 export { homeLoad } ;
 export { todayLoad } ;
 export { notesLoad } ;
 export { projectsLoad } ;
 export { thisWeekLoad } ;
 export { tomorrowLoad } ;
+export { addListeners };

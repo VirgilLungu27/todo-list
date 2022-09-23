@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import './style.css';
-import { homeLoad, todayLoad, notesLoad, tomorrowLoad, projectsLoad, thisWeekLoad } from './functions.js';
+import { homeLoad, todayLoad, notesLoad, tomorrowLoad, projectsLoad, thisWeekLoad, addListeners } from './functions.js';
 
 const element = document.createElement('div');
 element.className = 'content';
@@ -30,51 +30,9 @@ function component() {
 }
 
 document.body.appendChild(component());
-
+addListeners();
 // this is to remove last child and insert the new elements of the todo list page depending on what the user selects.
 
-const homeDiv = document.getElementById('homepage')
-const todayDiv = document.getElementById('today')
-const tomorrowDiv = document.getElementById('tomorrow')
-const thisWeekDiv = document.getElementById('thisweek')
-const projectsDiv = document.getElementById('projects')
-const notesDiv = document.getElementById('notes')
-
-homeDiv.addEventListener('click', function homeChange() {
-    document.body.removeChild(document.body.children[2]);
-    document.body.appendChild(homeLoad());
-})
-
-todayDiv.addEventListener('click', function todayChange() {
-    document.body.removeChild(document.body.children[2]);
-    document.body.appendChild(todayLoad());
-})
-
-tomorrowDiv.addEventListener('click', function tomorrowChange() {
-    document.body.removeChild(document.body.children[2]);
-    document.body.appendChild(tomorrowLoad());
-})
-
-thisWeekDiv.addEventListener('click', function thisWeekChange() {
-    document.body.removeChild(document.body.children[2]);
-    document.body.appendChild(thisWeekLoad());
-})
-
-projectsDiv.addEventListener('click', function projectsChange() {
-    document.body.removeChild(document.body.children[2]);
-    document.body.appendChild(projectsLoad());
-})
-
-notesDiv.addEventListener('click', function notesChange() {
-    document.body.removeChild(document.body.children[2]);
-    document.body.appendChild(notesLoad());
-})
-
-const backButton = document.getElementById('back');
-backButton.addEventListener('click', function homeChange() {
-    document.body.removeChild(document.body.children[2]);
-    document.body.appendChild(homeLoad());
-});
 
 let array_collection = Array.from(document.body.children)
 console.log(array_collection)
