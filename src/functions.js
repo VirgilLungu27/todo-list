@@ -146,10 +146,10 @@ function tomorrowLoad() {
     element.innerHTML = `
     <div class="hero">
         <div class="main">
-            <h3>Find your todo list for tomorrow down below.</h3>
-        <div class="addtask">
-            <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-            <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
+            <div class="tomorrow"><h3 id="tomorrowh3">Find your todo list for tomorrow down below. Tomorrow will be: </h3></div>
+            <div class="addtask">
+                <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
         </div>
         </div>  
         <div class="todo">
@@ -173,6 +173,15 @@ const todayDate = () => {
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
     let day = date.getDate();
+    dateSpan.innerHTML += year + "/" + month + "/" + day;
+}
+
+const tomorrowDate = () => {
+    const dateSpan = document.getElementById('tomorrowh3')
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate() + 1;
     dateSpan.innerHTML += year + "/" + month + "/" + day;
 }
 
@@ -208,6 +217,7 @@ function addListeners() {
     tomorrowDiv.addEventListener('click', function tomorrowChange() {
         document.body.removeChild(document.body.children[2]);
         document.body.appendChild(tomorrowLoad());
+        tomorrowDate();
         addListeners();
     })
 
