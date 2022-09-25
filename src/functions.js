@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { formatDistance, subDays } from 'date-fns';
 
 
 function homeLoad() {
@@ -118,7 +119,7 @@ function thisWeekLoad() {
     element.innerHTML = `
     <div class="hero">
         <div class="main">
-            <h3>Find your tasks for this week below.</h3>
+            <div class="thisweek"><h3 id="thisweekh3">Find your tasks for this week below. The current week number of the year is: </h3></div>
             <div class="addtask">
               <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
               <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
@@ -185,6 +186,25 @@ const tomorrowDate = () => {
     dateSpan.innerHTML += year + "/" + month + "/" + day;
 }
 
+
+// used stack overflow to find the following function to get week
+
+const getWeekNumber = (d) => {
+    // Copy date so don't modify original
+    d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    // Set to nearest Thursday: current date + 4 - current day number
+    // Make Sunday's day number 7
+    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
+    // Get first day of year
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    // Calculate full weeks to nearest Thursday
+    var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+    // Return array of year and week number
+    return [weekNo];
+}
+
+
+
 function addButtonLoad() {
     const elementAdd = document.createElement('div');
     elementAdd.className = 'addhere'
@@ -224,6 +244,9 @@ function addListeners() {
     thisWeekDiv.addEventListener('click', function thisWeekChange() {
         document.body.removeChild(document.body.children[2]);
         document.body.appendChild(thisWeekLoad());
+        const dateSpan = document.getElementById('thisweekh3')
+        let result = getWeekNumber(new Date());
+        dateSpan.innerHTML += result;
         addListeners();
     })
 
