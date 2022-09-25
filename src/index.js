@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import './style.css';
-import { addListeners, addButtonLoad } from './functions.js';
+import { addListeners, addNewTask } from './functions.js';
 
 
 const element = document.createElement('div');
@@ -34,12 +34,5 @@ function component() {
 
 document.body.appendChild(component());
 addListeners();
+addNewTask();
 // this is to remove last child and insert the new elements of the todo list page depending on what the user selects.
-
-const addButton = document.getElementById('add')
-let array_collection = Array.from(document.body.getElementsByClassName('addhere'))
-console.log(array_collection)
-
-addButton.addEventListener('click', function addInput() {
-    array_collection[0].parentNode.insertBefore(addButtonLoad(), array_collection[0]);
-})

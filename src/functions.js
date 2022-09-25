@@ -9,7 +9,7 @@ function homeLoad() {
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
             <div class="addtask">
                 <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-                <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
             </div>
         </div>
 
@@ -36,7 +36,7 @@ function todayLoad() {
             <h3>Find today's projects.</h3>
             <div class="addtask">
                 <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-                <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
             </div>
         </div>
 
@@ -65,7 +65,7 @@ function notesLoad() {
             <h3>Find your project notes.</h3>
           <div class="addtask">
             <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-            <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
+            <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
           </div>
         </div>
 
@@ -93,7 +93,7 @@ function projectsLoad() {
             <h3>Find all of your projects and project ideas.</h3>
             <div class="addtask">
               <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-              <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
+              <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
             </div>
         </div>
             <div class="todo">
@@ -120,7 +120,7 @@ function thisWeekLoad() {
             <h3>Find your tasks for this week below.</h3>
             <div class="addtask">
               <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-              <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
+              <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
             </div>
         </div>
 
@@ -148,7 +148,7 @@ function tomorrowLoad() {
             <h3>Find your todo list for tomorrow down below.</h3>
         <div class="addtask">
             <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-            <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
+            <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
         </div>
         </div>  
         <div class="todo">
@@ -171,7 +171,6 @@ function addButtonLoad() {
     elementAdd.innerHTML = `<input type="text" id="name" name="name" minlength="3" maxlength="40">`
     return elementAdd;
 }
-
 
 function addListeners() {
     const homeDiv = document.getElementById('homepage')
@@ -217,6 +216,15 @@ function addListeners() {
         document.body.appendChild(notesLoad());
         addListeners();
     })
+    addNewTask();
 }
 
-export { addListeners, addButtonLoad };
+const addNewTask = () => {
+    const addButton = document.getElementById('add')
+    let array_collection = Array.from(document.body.getElementsByClassName('addhere'))
+    addButton.addEventListener('click', function addInput() {
+        array_collection[0].parentNode.insertBefore(addButtonLoad(), array_collection[0]);
+    })
+}
+
+export { addListeners, addNewTask };
