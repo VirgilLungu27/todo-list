@@ -45,7 +45,7 @@ body {
 }
 
 .main {
-    top: 20%;
+    top: 10%;
     left: 32%;
     position: absolute;
     font-weight: 300;
@@ -81,4 +81,17 @@ body {
 
 .addtask > h4 > span > img:hover {
     cursor: pointer;
+}
+
+.addhere {
+    padding-top: 5px;
+}
+
+.addhere > input { 
+    background-color: rgb(253, 246, 237);
+}
+
+.addhere > #date {
+    margin-left: 5px;
+    font-weight: 600;
 }

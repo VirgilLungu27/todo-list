@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import './style.css';
-import { addListeners, addNewTask } from './functions.js';
+import { addListeners } from './functions.js';
 
 
 const element = document.createElement('div');
@@ -24,7 +24,7 @@ function component() {
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
             <div class="addtask">
                 <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><h5></h5></span></div>
             </div>
         </div>
     </div>`
@@ -34,5 +34,4 @@ function component() {
 
 document.body.appendChild(component());
 addListeners();
-addNewTask();
 // this is to remove last child and insert the new elements of the todo list page depending on what the user selects.
