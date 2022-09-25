@@ -1,3 +1,5 @@
+@import url('../node_modules/font-awesome/css/font-awesome.min.css');
+
 body {
     overflow: hidden;
     background: linear-gradient(120deg, beige, white);
@@ -53,12 +55,9 @@ body {
     font-family: 'Ubuntu';
 }
 
-.addtask > h4 > span {
-    margin-right: 5px;
-}
-
 .addtask > div > input {
     border-radius: 5px;
+    margin-right: 3px;
 }
 
 .addtask > h4 > span > img:hover {

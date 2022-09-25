@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import { formatDistance, subDays } from 'date-fns';
 
 
 function homeLoad() {
@@ -11,7 +10,7 @@ function homeLoad() {
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
             <div class="addtask">
                 <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><i class="fa fa-save"></i></span></div>
             </div>
         </div>
 
@@ -38,7 +37,7 @@ function todayLoad() {
             <div class="today"><h3 id="todayh3">Find today's projects. The date is: </h3></div>
             <div class="addtask">
                 <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><i class="fa fa-save"></i></span></div>
             </div>
         </div>
 
@@ -67,7 +66,7 @@ function notesLoad() {
             <h3>Find your project notes.</h3>
           <div class="addtask">
             <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-            <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
+            <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><i class="fa fa-save"></i></span></div>
           </div>
         </div>
 
@@ -95,7 +94,7 @@ function projectsLoad() {
             <h3>Find all of your projects and project ideas.</h3>
             <div class="addtask">
               <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-              <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
+              <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><i class="fa fa-save"></i></span></div>
             </div>
         </div>
             <div class="todo">
@@ -122,7 +121,7 @@ function thisWeekLoad() {
             <div class="thisweek"><h3 id="thisweekh3">Find your tasks for this week below. The current week number of the year is: </h3></div>
             <div class="addtask">
               <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-              <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
+              <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><i class="fa fa-save"></i></span></div>
             </div>
         </div>
 
@@ -150,7 +149,7 @@ function tomorrowLoad() {
             <div class="tomorrow"><h3 id="tomorrowh3">Find your todo list for tomorrow down below. Tomorrow will be: </h3></div>
             <div class="addtask">
                 <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><i class="fa fa-save"></i></span></div>
         </div>
         </div>  
         <div class="todo">
