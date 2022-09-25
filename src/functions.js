@@ -7,6 +7,10 @@ function homeLoad() {
     <div class="hero">
         <div class="main">
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
+            <div class="addtask">
+                <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
+                <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
+            </div>
         </div>
 
         <div class="todo">
@@ -31,7 +35,8 @@ function todayLoad() {
         <div class="main">
             <h3>Find today's projects.</h3>
             <div class="addtask">
-                <h4><span><img src="../src/addemoji.png"></span>Add task below.</h4>
+                <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
+                <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
             </div>
         </div>
 
@@ -59,7 +64,8 @@ function notesLoad() {
         <div class="main">
             <h3>Find your project notes.</h3>
           <div class="addtask">
-            <h4><span><img src="../src/addemoji.png"></span>Add task below.</h4>
+            <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
+            <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
           </div>
         </div>
 
@@ -86,7 +92,8 @@ function projectsLoad() {
         <div class="main">
             <h3>Find all of your projects and project ideas.</h3>
             <div class="addtask">
-              <h4><span><img src="../src/addemoji.png"></span>Add task below.</h4>
+              <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
+              <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
             </div>
         </div>
             <div class="todo">
@@ -112,7 +119,8 @@ function thisWeekLoad() {
         <div class="main">
             <h3>Find your tasks for this week below.</h3>
             <div class="addtask">
-              <h4><span><img src="../src/addemoji.png"></span>Add task below.</h4>
+              <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
+              <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
             </div>
         </div>
 
@@ -139,10 +147,10 @@ function tomorrowLoad() {
         <div class="main">
             <h3>Find your todo list for tomorrow down below.</h3>
         <div class="addtask">
-            <h4><span><img src="../src/addemoji.png"></span>Add task below.</h4>
+            <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
+            <div><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
         </div>
-        </div>
-
+        </div>  
         <div class="todo">
             <div class="todofirst"><h3>Todo List</h3></div>
         
@@ -158,6 +166,13 @@ function tomorrowLoad() {
     return element;
 }
 
+function addButtonLoad() {
+    const elementAdd = document.createElement('div');
+    elementAdd.innerHTML = `<input type="text" id="name" name="name" minlength="3" maxlength="40">`
+    return elementAdd;
+}
+
+
 function addListeners() {
     const homeDiv = document.getElementById('homepage')
     const todayDiv = document.getElementById('today')
@@ -165,6 +180,7 @@ function addListeners() {
     const thisWeekDiv = document.getElementById('thisweek')
     const projectsDiv = document.getElementById('projects')
     const notesDiv = document.getElementById('notes')
+
 
     homeDiv.addEventListener('click', function homeChange() {
         document.body.removeChild(document.body.children[2]);
@@ -201,13 +217,6 @@ function addListeners() {
         document.body.appendChild(notesLoad());
         addListeners();
     })
-  
 }
 
-export { homeLoad } ;
-export { todayLoad } ;
-export { notesLoad } ;
-export { projectsLoad } ;
-export { thisWeekLoad } ;
-export { tomorrowLoad } ;
-export { addListeners };
+export { addListeners, addButtonLoad };

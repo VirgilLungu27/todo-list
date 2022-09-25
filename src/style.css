@@ -74,3 +74,11 @@ body {
 .addtask > h4 > span {
     margin-right: 5px;
 }
+
+.addtask > div > input {
+    border-radius: 5px;
+}
+
+.addtask > h4 > span > img:hover {
+    cursor: pointer;
+}

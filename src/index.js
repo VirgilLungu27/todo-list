@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import './style.css';
-import { addListeners } from './functions.js';
+import { addListeners, addButtonLoad } from './functions.js';
+
 
 const element = document.createElement('div');
 element.className = 'content';
@@ -21,8 +22,11 @@ function component() {
         </div>
         <div class="main">
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
+            <div class="addtask">
+                <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"></div>
+            </div>
         </div>
-
     </div>`
 
     return element;
@@ -32,6 +36,10 @@ document.body.appendChild(component());
 addListeners();
 // this is to remove last child and insert the new elements of the todo list page depending on what the user selects.
 
-
-let array_collection = Array.from(document.body.children)
+const addButton = document.getElementById('add')
+let array_collection = Array.from(document.body.getElementsByClassName('addhere'))
 console.log(array_collection)
+
+addButton.addEventListener('click', function addInput() {
+    array_collection[0].parentNode.insertBefore(addButtonLoad(), array_collection[0]);
+})
