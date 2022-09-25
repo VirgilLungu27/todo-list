@@ -1,5 +1,6 @@
 import _ from 'lodash';
 
+
 function homeLoad() {
     const element = document.createElement('div');
     element.className = 'content';
@@ -9,7 +10,7 @@ function homeLoad() {
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
             <div class="addtask">
                 <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><h5>${todayDate()}</h5></span></div>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
             </div>
         </div>
 
@@ -33,10 +34,10 @@ function todayLoad() {
     element.innerHTML = `
     <div class="hero">
         <div class="main">
-            <h3>Find today's projects.</h3>
+            <div class="today"><h3 id="todayh3">Find today's projects. The date is: </h3></div>
             <div class="addtask">
                 <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><h5>${todayDate()}</h5></span></div>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
             </div>
         </div>
 
@@ -65,7 +66,7 @@ function notesLoad() {
             <h3>Find your project notes.</h3>
           <div class="addtask">
             <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-            <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><h5>${todayDate()}</h5></span></div>
+            <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
           </div>
         </div>
 
@@ -93,7 +94,7 @@ function projectsLoad() {
             <h3>Find all of your projects and project ideas.</h3>
             <div class="addtask">
               <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-              <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><h5>${todayDate()}</h5></span></div>
+              <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
             </div>
         </div>
             <div class="todo">
@@ -120,7 +121,7 @@ function thisWeekLoad() {
             <h3>Find your tasks for this week below.</h3>
             <div class="addtask">
               <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-              <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><h5>${todayDate()}</h5></span></div>
+              <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
             </div>
         </div>
 
@@ -148,7 +149,7 @@ function tomorrowLoad() {
             <h3>Find your todo list for tomorrow down below.</h3>
         <div class="addtask">
             <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-            <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><h5>${todayDate()}</h5></span></div>
+            <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"></span></div>
         </div>
         </div>  
         <div class="todo">
@@ -166,21 +167,19 @@ function tomorrowLoad() {
     return element;
 }
 
-
 const todayDate = () => {
-    const dateSpan = document.getElementById('date')
+    const dateSpan = document.getElementById('todayh3')
     let date = new Date();
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
     let day = date.getDate();
-    dateSpan.innerHTML = year + "/" + month + "/" + day;
+    dateSpan.innerHTML += year + "/" + month + "/" + day;
 }
-
 
 function addButtonLoad() {
     const elementAdd = document.createElement('div');
     elementAdd.className = 'addhere'
-    elementAdd.innerHTML = `<input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date"><h5>${todayDate()}</h5></span>`
+    elementAdd.innerHTML = `<input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="date></span>`
     return elementAdd;
 }
 
@@ -202,6 +201,7 @@ function addListeners() {
     todayDiv.addEventListener('click', function todayChange() {
         document.body.removeChild(document.body.children[2]);
         document.body.appendChild(todayLoad());
+        todayDate();
         addListeners();
     })
 
@@ -218,7 +218,7 @@ function addListeners() {
     })
 
     projectsDiv.addEventListener('click', function projectsChange() {
-        document.body.removeChupdateDateild(document.body.children[2]);
+        document.body.removeChild(document.body.children[2]);
         document.body.appendChild(projectsLoad());
         addListeners();
     })
