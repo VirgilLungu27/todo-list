@@ -24,7 +24,7 @@ function component() {
             <h3>Welcome to your todo list. Use the menu on the left to organize your projects.</h3>
             <div class="addtask">
                 <h4><span id="add"><img src="../src/addemoji.png"></span>Add task below.</h4>
-                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="save"><i class="fa fa-save" style="margin-right: 5px"></i></span></div>
+                <div class="addhere"><input type="text" id="name" name="name" minlength="3" maxlength="40"><span id="save"><i class="fa fa-save"></i></span></div>
             </div>
         </div>
     </div>`

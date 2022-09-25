@@ -60,6 +60,10 @@ body {
     margin-right: 3px;
 }
 
+.addtask > h4 > span > img {
+    padding-right: 5px;
+}
+
 .addtask > h4 > span > img:hover {
     cursor: pointer;
 }
@@ -72,7 +76,11 @@ body {
     background-color: rgb(253, 246, 237);
 }
 
-.addhere > #date {
+.addhere > #save {
     margin-left: 5px;
     font-weight: 600;
+}
+
+#save:hover {
+    cursor: pointer;
 }
